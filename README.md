@@ -4,7 +4,9 @@
 In this project I implemented a Fuzzing detector in Python. This tool
 listen to packets in the network, and detects "Fuzzing" attacks. 
 This tool detect only Fuzzing attacks on SSH protocol
+
 You can read more about Fuzzing here: https://en.wikipedia.org/wiki/Fuzzing
+
 You can read more about SSH protocol here: https://en.wikipedia.org/wiki/Secure_Shell
 
 # More about the project:
@@ -14,6 +16,7 @@ In this project I used scapy python library in order to listen the network commu
 and then I analyzed only SSH packets.
 Here you can see how SSH packets looks like (from wireshark):
 ![image](https://user-images.githubusercontent.com/92723105/167287906-a3e595a4-49d3-4de1-a0f5-94d6c7e65384.png)
+
 for each relevant packet I got, I analyzed the content and noticed if an attack was detected.
 I also used spellchecker python library for this mission.
 
