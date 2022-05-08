@@ -1,13 +1,17 @@
+import random
 from scapy.layers.inet import IP, TCP
 from scapy.all import *
-import  time
+import time
 
-
+msg_for_atck=["I love you", "xxxxxxx", "kaka hara atkafa", "hello world", "shhh ya barbari",
+              "geeks for geeks", "King David of Israel", "bopuryr", "hrgiltrh ghlwruihgiu gerhgi grugh",
+              "Israel forever", "puta madrid", "Haifa"]
 def capture_summary():
-    for i in range(10):
-        # send(IP(dst=['10.0.0.138']) / TCP(dport=22)/"Hello World")
-        # send(IP(dst=['10.0.0.138']) / TCP(dport=22)/("0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, ").encode("utf-8"))
-        time.sleep(5)
+    time.sleep(5)
+    my_msg_index= random.randint(0,len(msg_for_atck)-1)
+    my_msg=msg_for_atck[my_msg_index]
+    send(IP(dst=['10.0.0.138']) / TCP(dport=22)/my_msg)
 
-
-capture_summary()
+if __name__=="__main__":
+    for i in range(7):
+        capture_summary()
